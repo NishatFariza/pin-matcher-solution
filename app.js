@@ -17,5 +17,18 @@ function genaretePin(){
   console.log(pin);
 }
 document.getElementById('key-pad').addEventListener('click', function(event){
-  console.log(event.target.innerText);
-})
+  const number =(event.target.innerText);
+  const clacInput = document.getElementById('typed-numbers');
+  if(isNaN(number)) {
+    //   console.log('hhhhhhh')
+    //   if(number == 'c'){
+    //       clacInput.value = '';
+    //   }
+  }
+
+  else{ 
+    const previousNumber = clacInput.value;
+    const newNumber = previousNumber + number ;
+    clacInput.value = newNumber;
+  }
+});
