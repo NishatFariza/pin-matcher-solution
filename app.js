@@ -14,16 +14,16 @@ function genaretePin(){
     const pin = getPin();
     document.getElementById('display-pin').value =pin;
   
-  console.log(pin);
+//   console.log(pin);
 }
 document.getElementById('key-pad').addEventListener('click', function(event){
   const number =(event.target.innerText);
   const clacInput = document.getElementById('typed-numbers');
   if(isNaN(number)) {
     //   console.log('hhhhhhh')
-    //   if(number == 'c'){
-    //       clacInput.value = '';
-    //   }
+      if(number == 'c'){
+          clacInput.value = '';
+      }
   }
 
   else{ 
@@ -32,3 +32,18 @@ document.getElementById('key-pad').addEventListener('click', function(event){
     clacInput.value = newNumber;
   }
 });
+function verifyPin(){
+    const pin =document.getElementById('display-pin').value;
+    const typeNumber =document.getElementById('typed-numbers').value;
+    const successMassege =document.getElementById('notify-success');
+    const failError =document.getElementById('notify-fail');
+
+    if( pin == typeNumber){
+        successMassege.style.display ='block';
+        failError.style.display ='none';
+    }
+    else{
+        successMassege.style.display ='none';
+       failError.style.display ='block';
+    }
+}
