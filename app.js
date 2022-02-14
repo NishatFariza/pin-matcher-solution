@@ -17,11 +17,11 @@ function genaretePin(){
 //   console.log(pin);
 }
 document.getElementById('key-pad').addEventListener('click', function(event){
-  const number =(event.target.innerText);
+  const number =event.target.innerText;
   const clacInput = document.getElementById('typed-numbers');
   if(isNaN(number)) {
     //   console.log('hhhhhhh')
-      if(number == 'c'){
+      if(number == 'C'){
           clacInput.value = '';
       }
   }
@@ -46,4 +46,4 @@ function verifyPin(){
         successMassege.style.display ='none';
        failError.style.display ='block';
     }
-}
+};
